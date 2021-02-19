@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Chapter 1 Introduction and general properties of GLMs</title>
+    <url>/2021/02/19/GLM-C1/</url>
+    <content><![CDATA[<img src="/2021/02/19/GLM-C1/1.jpg" class title="This is an example image">
+<a id="more"></a>
+<img src="/2021/02/19/GLM-C1/1.png" class title="This is an example image">
+<p><img src="/2021/02/19/GLM-C1/1.jpg" alt="20200213113630227"></p>
+]]></content>
+      <categories>
+        <category>统计</category>
+        <category>广义线性模型</category>
+      </categories>
+      <tags>
+        <tag>标签1</tag>
+        <tag>标签2</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用Github Pages和Hexo搭建个人博客</title>
+    <url>/2021/02/19/TutOfPersonalBlog/</url>
+    <content><![CDATA[<h1 id="使用Github-Pages和Hexo搭建个人博客"><a href="#使用Github-Pages和Hexo搭建个人博客" class="headerlink" title="使用Github Pages和Hexo搭建个人博客"></a>使用Github Pages和Hexo搭建个人博客</h1><p>反正都搭好了不如第一篇就简单记录一下搭建过程，其实网上教程很多，这里只是花一点时间记一下搭建过程，搭建并没有踩很多坑，用的是macOS。</p>
+<a id="more"></a>
+<h2 id="为什么选择Github-Pages和Hexo"><a href="#为什么选择Github-Pages和Hexo" class="headerlink" title="为什么选择Github Pages和Hexo"></a>为什么选择Github Pages和Hexo</h2><p>突然想搭博客是因为想玩玩前端。使用Github Pages主要是因为它是免费的，不用再花钱租服务器。<br>在Jekyll和Hexo这两个静态页面生成器（Static Website Generation）中，Jekyll依赖Ruby，生成静态站点的速度会随着网站内容增加越来越慢，而Hexo依赖node，主打速度，有大量可用的免费开源主题和很活跃的中国社区。</p>
+<h2 id="初始化Github-Pages"><a href="#初始化Github-Pages" class="headerlink" title="初始化Github Pages"></a>初始化Github Pages</h2><ol>
+<li>需要注册一个Github账号,记下<strong>Username</strong> and <strong>email address</strong></li>
+<li>按照<a href="https://pages.github.com/">官方教程</a>新建一个仓库（Repositories），注意仓库必须命名为&lt;<strong>Username.github.io</strong>&gt;</li>
+</ol>
+<h2 id="Git初始化"><a href="#Git初始化" class="headerlink" title="Git初始化"></a>Git初始化</h2><p>mac系统Xcode自带git，<code>git --version</code>查看版本。mac系统也自带SSH。</p>
+<h3 id="配置信息"><a href="#配置信息" class="headerlink" title="配置信息"></a>配置信息</h3><p>在终端进行操作，设置 user.name 和 user.email 配置信息，我这里设置为全局</p>
+<figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line">git <span class="keyword">config</span> --<span class="keyword">global</span> user<span class="variable">.name</span> <span class="string">&quot;你的GitHub用户名&quot;</span></span><br><span class="line">git <span class="keyword">config</span> --<span class="keyword">global</span> user<span class="variable">.email</span> <span class="string">&quot;你的GitHub注册邮箱&quot;</span></span><br></pre></td></tr></table></figure>
+<h3 id="生成密钥"><a href="#生成密钥" class="headerlink" title="生成密钥"></a>生成密钥</h3><p>通过注册的邮箱生成 ssh 密钥文件：</p>
+<figure class="highlight excel"><table><tr><td class="code"><pre><span class="line">ssh-keygen -<span class="built_in">t</span> rsa -C <span class="string">&quot;你的GitHub注册邮箱&quot;</span></span><br></pre></td></tr></table></figure>
+<p>打开~/id_rsa.pub<br>全部复制到github网页版setting-&gt;SSH里</p>
+<h3 id="测试SSH"><a href="#测试SSH" class="headerlink" title="测试SSH"></a>测试SSH</h3><figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>ssh -T git<span class="variable">@github</span>.com</span><br></pre></td></tr></table></figure>
+<p>你将会看到：</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">The</span> authenticity of host &#x27;github.com (<span class="number">207.97.227.239</span>)&#x27; can&#x27;t be established.</span><br><span class="line"><span class="attribute">RSA</span> key fingerprint is <span class="number">16</span>:<span class="number">27</span>:ac:a<span class="number">5</span>:<span class="number">76</span>:<span class="number">28</span>:<span class="number">2</span>d:<span class="number">36</span>:<span class="number">63</span>:<span class="number">1</span>b:<span class="number">56</span>:<span class="number">4</span>d:eb:df:a<span class="number">6</span>:<span class="number">48</span>.</span><br><span class="line"><span class="attribute">Are</span> you sure you want to continue connecting (yes/no)?</span><br></pre></td></tr></table></figure>
+<p>选择 yes</p>
+<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">Hi ***! You<span class="symbol">&#x27;ve</span> successfully authenticated, but GitHub does <span class="keyword">not</span> provide shell <span class="keyword">access</span>.</span><br></pre></td></tr></table></figure>
+<h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><p>hexo需要node环境。如果你还没有安装brew，请一定要安装，节省生命，懂得都懂。</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line"><span class="regexp">/bin/</span>bash -c <span class="string">&quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;</span></span><br></pre></td></tr></table></figure>
+<p>然后安装node，参考<a href="https://hexo.io/zh-cn/docs/">node官方文档</a><br><figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">brew install <span class="keyword">node</span><span class="title"></span></span><br></pre></td></tr></table></figure><br>使用node包管理工具npm安装hexo，自带源非常慢，非常非常慢，使用国内源安装有两种方法<br>一次性使用国内源：<br><figure class="highlight avrasm"><table><tr><td class="code"><pre><span class="line">npm install hexo-<span class="keyword">cli</span> -g  --registry https://registry.npm.taobao<span class="meta">.org</span></span><br></pre></td></tr></table></figure><br>设定全局源配置（等于创建了.npmrc 文件）使用国内源：</p>
+<figure class="highlight gams"><table><tr><td class="code"><pre><span class="line">npm config <span class="keyword">set</span> registry <span class="comment">https:</span>//<span class="comment">registry.npm.taobao.org</span></span><br><span class="line">npm <span class="comment">install hexo-cli -g</span></span><br></pre></td></tr></table></figure>
+<p>安装好后查看当前安装的模块（包），注意hexo是全局安装的，要加参数<code>-g</code></p>
+<figure class="highlight coffeescript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">npm</span> ls -g</span><br></pre></td></tr></table></figure>
+<h3 id="hexo常用语法"><a href="#hexo常用语法" class="headerlink" title="hexo常用语法"></a>hexo常用语法</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo g <span class="comment">#generate 生成静态文件</span></span><br><span class="line">hexo s <span class="comment">#server 启动服务器。默认情况下，访问网址为： http://localhost:4000/</span></span><br><span class="line">hexo d <span class="comment">#deploy 部署网站。部署网站前，需要预先生成静态文件</span></span><br><span class="line">hexo clean <span class="comment">#clean 清除缓存文件 (db.json) 和已生成的静态文件 (public)。</span></span><br></pre></td></tr></table></figure>
+<h2 id="Hexo初始化"><a href="#Hexo初始化" class="headerlink" title="Hexo初始化"></a>Hexo初始化</h2><p>安装完成后执行如下命令</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init hexofolder</span><br><span class="line"><span class="built_in">cd</span> hexofolder</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<p>hexo会在指定文件夹形成如下工作目录</p>
+<figure class="highlight sqf"><table><tr><td class="code"><pre><span class="line">.</span><br><span class="line">├── <span class="variable">_config</span>.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   ├── <span class="variable">_drafts</span></span><br><span class="line">|   └── <span class="variable">_posts</span></span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure>
+<p><code>_config.yml</code>文件为网站的配置信息，可以在此<a href="https://hexo.io/zh-cn/docs/configuration">配置大部分的参数</a>。</p>
+<h3 id="插件更改"><a href="#插件更改" class="headerlink" title="插件更改"></a>插件更改</h3><p>最好在开始工作之前进行一系列的插件更改，完善对于latex，git和图片插入的支持</p>
+<figure class="highlight jboss-cli"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cd</span> hexofolder</span><br><span class="line">npm uninstall <span class="params">--save</span> hexo-renderer-marked <span class="comment">#卸载原有md渲染引擎</span></span><br><span class="line">npm install <span class="params">--save</span> hexo-renderer-kramed <span class="comment">#使用新引擎</span></span><br><span class="line">npm install <span class="params">--save</span> hexo-math <span class="comment">#LaTeX支持</span></span><br><span class="line">npm install <span class="params">--save</span> hexo-deployer-git <span class="comment">#git支持，需要修改hexo _config.yml文件</span></span><br><span class="line">npm uninstall <span class="params">--save</span> hexo-asset-image <span class="comment">#图片插入支持，建议配合Typora</span></span><br></pre></td></tr></table></figure>
+<h2 id="安装并使用Next主题"><a href="#安装并使用Next主题" class="headerlink" title="安装并使用Next主题"></a>安装并使用Next主题</h2><blockquote>
+<p>注意原来的next页面已经不再维护了</p>
+<p>一定是<a href="https://github.com/theme-next">theme-next</a>/<a href="https://github.com/theme-next/hexo-theme-next">hexo-theme-next</a></p>
+</blockquote>
+<p>安装主题next</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">cd hexofolder</span><br><span class="line">git clone https:<span class="regexp">//gi</span>thub.com<span class="regexp">/theme-next/</span>hexo-theme-<span class="keyword">next</span> themes/<span class="keyword">next</span></span><br></pre></td></tr></table></figure>
+<p>升级主题next可以执行</p>
+<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cd</span> hexofolder</span><br><span class="line"><span class="keyword">cd</span> themes/<span class="keyword">next</span></span><br><span class="line">git pull origin master</span><br></pre></td></tr></table></figure>
+<p>Next _config.yml文件:</p>
+<p><code>per_page: true</code> 关闭每一页渲染公式，没有公式页面的访问速度就不会受到影响，但是每一个文件就需要手动在markdown文件头中添加<code>mathjax: true</code>，配合<code>hexo-renderer-kramed</code>和<code>hexo-math</code>插件就可以写公式了：</p>
+<p>行内公式：$\Im, \imath, \jmath, \Bbbk, \ell, \mho, \wp, \Re, \circledS$</p>
+<p>行间公式：</p>
+<script type="math/tex; mode=display">
+dy/dx, \mathrm{d}y/\mathrm{d}x, \frac{dy}{dx}, \frac{\mathrm{d}y}{\mathrm{d}x}, \frac{\partial^2}{\partial x_1\partial x_2}y</script>]]></content>
+      <categories>
+        <category>教程</category>
+        <category>计算机</category>
+      </categories>
+      <tags>
+        <tag>标签1</tag>
+        <tag>标签2</tag>
+      </tags>
+  </entry>
+</search>
