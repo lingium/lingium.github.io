@@ -156,7 +156,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -167,11 +167,19 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
 </div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/lingium" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;lingium" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:5464944@gmail.com" title="E-Mail → mailto:5464944@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
 
 
 
@@ -205,7 +213,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lingium.github.io/2021/05/23/HexoDocument/">
+    <link itemprop="mainEntityOfPage" href="https://lingium.github.io/2022/03/03/VariationalInference/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -223,7 +231,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/05/23/HexoDocument/" class="post-title-link" itemprop="url">如何用Hexo写文档</a>
+          <a href="/2022/03/03/VariationalInference/" class="post-title-link" itemprop="url">Variational Inference</a>
         </h2>
 
         <div class="post-meta-container">
@@ -234,7 +242,7 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2021-05-23 22:28:26" itemprop="dateCreated datePublished" datetime="2021-05-23T22:28:26+08:00">2021-05-23</time>
+      <time title="Created: 2022-03-03 11:51:47" itemprop="dateCreated datePublished" datetime="2022-03-03T11:51:47+08:00">2022-03-03</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -242,11 +250,7 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Hexo/Mac/" itemprop="url" rel="index"><span itemprop="name">Mac</span></a>
+          <a href="/categories/Statistics/" itemprop="url" rel="index"><span itemprop="name">Statistics</span></a>
         </span>
     </span>
 
@@ -260,11 +264,17 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="如何用Hexo写文档"><a href="#如何用Hexo写文档" class="headerlink" title="如何用Hexo写文档"></a>如何用Hexo写文档</h1><p>这个是Hexo如何写文档比较细节的记录，因为上一次没有写所以很多东西忘了。</p>
-<img src="/2021/05/23/HexoDocument/1.jpg" class title="This is an example image">
+          <p>Variational inference is used in the graduation thesis. Record it here.</p>
+<p>The goal of variational inference is to approximate the conditional probability of a latent variable <span class="math inline">\(x\)</span> under the observed variable <span class="math inline">\(y\)</span> (in the context of dimensionality reduction, our data). We choose a tractable distribution <span class="math inline">\(q(x; v)\)</span>, where <span class="math inline">\(v\)</span> represents model hyperparameters, as an approximation to simulate the intractable true distribution <span class="math inline">\(p(x \mid y)\)</span>.</p>
+<p>We can rewrite <span class="math inline">\(\log p(y)\)</span> to decompose it into two terms. can be written as the sum of the following two terms:</p>
+<p><span class="math display">\[
+\begin{equation}
+  \log p(y)=\underbrace{\int q(x) \log p(y, x) dx -\int q(x) \log q(x) d x}_{L(q(x)), E L O B(\text { Evidence Lower Bound })}+\underbrace{\int q(x) \log \frac{q(x)}{p(x \mid y)} d x}_{K L(q(x) \| p(x \mid y))}. \label{eq1} 
+  \end{equation}
+\]</span></p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2021/05/23/HexoDocument/#more" rel="contents">
+              <a class="btn" href="/2022/03/03/VariationalInference/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -295,7 +305,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lingium.github.io/2021/02/19/TutOfPersonalBlog/">
+    <link itemprop="mainEntityOfPage" href="https://lingium.github.io/2022/02/20/RenewRepository/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -313,7 +323,99 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/02/19/TutOfPersonalBlog/" class="post-title-link" itemprop="url">使用Github Pages和Hexo搭建个人博客</a>
+          <a href="/2022/02/20/RenewRepository/" class="post-title-link" itemprop="url">Reset a Git Remote Repository</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-02-20 15:10:00" itemprop="dateCreated datePublished" datetime="2022-02-20T15:10:00+08:00">2022-02-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Git/" itemprop="url" rel="index"><span itemprop="name">Git</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="reset-a-git-remote-repository">Reset a Git Remote Repository</h1>
+<p>Needs:</p>
+<p>Delete the git remote repository, including all files in the remote repository, all commit records, and make it a brand new empty repository.</p>
+<p>Scenes:</p>
+<ol type="1">
+<li><p>To rebuild the original project, you need to clear the original history or all code, but do not create a new remote repository.</p></li>
+<li><p>A submitted file contains sensitive information (password files, etc.).</p></li>
+<li><p>Need to delete the remote repository for some reason.</p></li></ol>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/02/20/RenewRepository/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lingium.github.io/2021/02/19/TutOfPersonalBlog-en/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Lingium">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LINGIUM">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | LINGIUM">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/02/19/TutOfPersonalBlog-en/" class="post-title-link" itemprop="url">Build a personal blog with Github Pages and Hexo</a>
         </h2>
 
         <div class="post-meta-container">
@@ -357,10 +459,14 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="使用Github-Pages和Hexo搭建个人博客"><a href="#使用Github-Pages和Hexo搭建个人博客" class="headerlink" title="使用Github Pages和Hexo搭建个人博客"></a>使用Github Pages和Hexo搭建个人博客</h1><p>反正都搭好了不如第一篇就简单记录一下搭建过程，其实网上教程很多，这里只是花一点时间记一下搭建过程，搭建并没有踩很多坑，用的是macOS。</p>
+          <h1 id="build-a-personal-blog-with-github-pages-and-hexo">Build a personal blog with Github Pages and Hexo</h1>
+<p>The first blog will briefly record the construction process. In fact, there are many online tutorials. I just take a little time to record the process. There are not many pits in the construction. System is MacOS.</p>
+<h2 id="why-choose-github-pages-and-hexo">Why choose Github Pages and Hexo?</h2>
+<p>I suddenly wanted to build a blog and play around with front-end development. I use Github Pages mainly because it is free and I don't have to spend money to rent a server.</p>
+<p>In Jekyll and Hexo, the two static webpage generators, Jekyll relies on Ruby, the speed of static site generation will be slower and slower as the site content increases, while Hexo relies on node, the main focus of speed, there are a lot of available free open source themes and a very active Chinese community.</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2021/02/19/TutOfPersonalBlog/#more" rel="contents">
+              <a class="btn" href="/2021/02/19/TutOfPersonalBlog-en/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -425,7 +531,7 @@
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
 <script src="/js/third-party/math/mathjax.js"></script>
 
 

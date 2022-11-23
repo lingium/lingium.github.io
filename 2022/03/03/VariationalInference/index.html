@@ -20,24 +20,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"lingium.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="LINGIUM">
-<meta property="og:url" content="https://lingium.github.io/archives/2021/02/index.html">
+    <meta name="description" content="Variational inference is used in the graduation thesis. Record it here. The goal of variational inference is to approximate the conditional probability of a latent variable \(x\) under the observed va">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Variational Inference">
+<meta property="og:url" content="https://lingium.github.io/2022/03/03/VariationalInference/index.html">
 <meta property="og:site_name" content="LINGIUM">
+<meta property="og:description" content="Variational inference is used in the graduation thesis. Record it here. The goal of variational inference is to approximate the conditional probability of a latent variable \(x\) under the observed va">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-03-03T03:51:47.000Z">
+<meta property="article:modified_time" content="2022-03-03T03:51:47.000Z">
 <meta property="article:author" content="Lingium">
-<meta property="article:tag" content="Statistics, Data Analysis, R">
+<meta property="article:tag" content="Statistics">
+<meta property="article:tag" content="Machine Learning">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://lingium.github.io/archives/2021/02/">
+<link rel="canonical" href="https://lingium.github.io/2022/03/03/VariationalInference/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"en","comments":"","permalink":"","path":"archives/2021/02/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://lingium.github.io/2022/03/03/VariationalInference/","path":"2022/03/03/VariationalInference/","title":"Variational Inference"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Archive | LINGIUM</title>
+<title>Variational Inference | LINGIUM</title>
   
 
 
@@ -71,7 +76,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">LINGIUM</h1>
+      <p class="site-title">LINGIUM</p>
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">I proceed to dedicate in honest simple verse this song to you.</p>
@@ -203,49 +208,151 @@
 </noscript>
 
 
-    <div class="main-inner archive posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
-  
-  
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <span class="collection-header">Um..! 3 posts in total. Keep on posting.</span>
-      </div>
 
-      
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://lingium.github.io/2022/03/03/VariationalInference/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Lingium">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LINGIUM">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Variational Inference | LINGIUM">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Variational Inference
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-03-03 11:51:47" itemprop="dateCreated datePublished" datetime="2022-03-03T11:51:47+08:00">2022-03-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Statistics/" itemprop="url" rel="index"><span itemprop="name">Statistics</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>Variational inference is used in the graduation thesis. Record it here.</p>
+<p>The goal of variational inference is to approximate the conditional probability of a latent variable <span class="math inline">\(x\)</span> under the observed variable <span class="math inline">\(y\)</span> (in the context of dimensionality reduction, our data). We choose a tractable distribution <span class="math inline">\(q(x; v)\)</span>, where <span class="math inline">\(v\)</span> represents model hyperparameters, as an approximation to simulate the intractable true distribution <span class="math inline">\(p(x \mid y)\)</span>.</p>
+<p>We can rewrite <span class="math inline">\(\log p(y)\)</span> to decompose it into two terms. can be written as the sum of the following two terms:</p>
+<p><span class="math display">\[
+\begin{equation}
+  \log p(y)=\underbrace{\int q(x) \log p(y, x) dx -\int q(x) \log q(x) d x}_{L(q(x)), E L O B(\text { Evidence Lower Bound })}+\underbrace{\int q(x) \log \frac{q(x)}{p(x \mid y)} d x}_{K L(q(x) \| p(x \mid y))}. \label{eq1} 
+  \end{equation}
+\]</span> <span id="more"></span></p>
+<p>The latter term is known as the <em>Kullback-Leibler (KL) divergence</em>, which is a method of quantifying the difference between two distributions, and is either larger than or equal to zero at all times. It equals 0 if and only if the two distributions are identical .</p>
+<p>Since <span class="math inline">\(\log p(y)\)</span> is a fixed quantity for a given set of observations, maximizing the  is equivalent to minimizing the KL divergence, i.e., minimizing the distance between the two distributions.</p>
+<p>This conclusion can also be obtained by use Jensen’s inequality to show that <span class="math display">\[\begin{align}
+    \log p(y) \geq ELOB.  \label{eq2}
+\end{align}\]</span> Based on this fact, instead of trying to maximize the likelihood directly, we can try to maximize the lower bound of the likelihood and still can optimize the parameters as well as make predictions.</p>
+<p>Proof of Equation <span class="math inline">\(\eqref{eq1}\)</span>, approach showing the relationship between marginal likelihood, ELOB, and KL divergence:</p>
+<p><span class="math display">\[
+    \begin{equation}
+      \begin{aligned}
+      \log p(y) &amp;=\log p(y, x)-\log p(x \mid y) \\
+      &amp;=\log \frac{p(y, x)}{q(x)}-\log \frac{p(x \mid y)}{q(x)} \\
+      &amp;=\log p(y, x)-\log q(x)-\log \frac{p(x \mid y)}{q(x)} \\
+      &amp;=\log p(y, x)-\log q(x)+\log \frac{q(x)}{p(x \mid y)}
+      \end{aligned}
+    \end{equation}
+\]</span></p>
+<p>Integrate <span class="math inline">\(q(x)\)</span> on both sides of the above equation</p>
+<p><span class="math display">\[
+\begin{equation}
+  \begin{aligned}
+  \int q(x) \log p(y) d x &amp;=\int q(x) \log p(y, x) d x-\int q(x) \log q(x) d x \\ 
+  &amp;+\int q(x) \log \frac{q(x)}{p(x \mid y)} d x
+  \end{aligned}
+\end{equation}
+\]</span></p>
+<p>Since <span class="math inline">\(q(x)\)</span> and <span class="math inline">\(p(y)\)</span> are independent, <span class="math inline">\(\int q(x) \log p(y) dx = \log p(y)\)</span>, then</p>
+<p><span class="math display">\[
+\begin{align}
+    \log p(y)=\underbrace{\int q(x) \log p(y, x) dx -\int q(x) \log q(x) d x}_{L(q(x)), E L O B(\text { Evidence Lower Bound })}+\underbrace{\int q(x) \log \frac{q(x)}{p(x \mid y)} d x}_{K L(q(x) \| p(x \mid y))}.
+\end{align}
+\]</span></p>
+<p>Another approach using Jensen’s inequality (Equation <span class="math inline">\(\eqref{eq2}\)</span>): <span class="math display">\[
+    \begin{equation}
+      \begin{aligned}
+      \log P(y) &amp;=\log \left(\int P(y, x) d x\right) \\
+      &amp;=\log \left(\int\left(\frac{P(y, x)}{q(x)} q(x)\right) d x\right) \\
+      &amp;=\log E_{x q(x)}\left[\frac{P(y, x)}{q(x)}\right] \\
+      &amp; \geq E_{x q(x)} \log \left(\frac{P(y, x)}{q(x)}\right) \\
+      &amp;=E_{x q(x)} \log P(y, x)-E_{x q(x)} \log q(x) \\
+      &amp;=\int q(x) \log P(y, x) d x-\int q(x) \log q(x) d x
+      \end{aligned}
+    \end{equation}
+\]</span></p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-02-19T12:30:26+08:00"
-              content="2021-02-19">
-          02-19
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/02/19/TutOfPersonalBlog-en/" itemprop="url">
-            <span itemprop="name">Build a personal blog with Github Pages and Hexo</span>
-          </a>
-      </div>
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Statistics/" rel="tag"># Statistics</a>
+              <a href="/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
+          </div>
 
-      
-    </header>
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/02/20/RenewRepository/" rel="prev" title="Reset a Git Remote Repository">
+                  <i class="fa fa-chevron-left"></i> Reset a Git Remote Repository
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
   </article>
+</div>
 
 
-    </div>
-  </div>
-  
-  
-  
+
+
+
 
 </div>
   </main>
@@ -288,7 +395,7 @@
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
 <script src="/js/third-party/math/mathjax.js"></script>
 
 

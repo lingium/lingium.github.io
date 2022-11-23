@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 5.4.2">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"lingium.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Build a personal blog with Github Pages and Hexo The first blog will briefly record the construction process. In fact, there are many online tutorials. I just take a little time to record the process.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Build a personal blog with Github Pages and Hexo">
+<meta property="og:url" content="https://lingium.github.io/2021/02/19/TutOfPersonalBlog-en/index.html">
+<meta property="og:site_name" content="LINGIUM">
+<meta property="og:description" content="Build a personal blog with Github Pages and Hexo The first blog will briefly record the construction process. In fact, there are many online tutorials. I just take a little time to record the process.">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-02-19T04:30:26.000Z">
+<meta property="article:modified_time" content="2021-02-20T04:30:26.000Z">
+<meta property="article:author" content="Lingium">
+<meta property="article:tag" content="Tutorials">
+<meta property="article:tag" content="Mac">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://lingium.github.io/2021/02/19/TutOfPersonalBlog-en/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://lingium.github.io/2021/02/19/TutOfPersonalBlog-en/","path":"2021/02/19/TutOfPersonalBlog-en/","title":"Build a personal blog with Github Pages and Hexo"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Build a personal blog with Github Pages and Hexo | LINGIUM</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">LINGIUM</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">I proceed to dedicate in honest simple verse this song to you.</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#build-a-personal-blog-with-github-pages-and-hexo"><span class="nav-number">1.</span> <span class="nav-text">Build a personal blog with Github Pages and Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#why-choose-github-pages-and-hexo"><span class="nav-number">1.1.</span> <span class="nav-text">Why choose Github Pages and Hexo?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#init-github-pages"><span class="nav-number">1.2.</span> <span class="nav-text">Init Github Pages</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#init-git"><span class="nav-number">1.3.</span> <span class="nav-text">Init Git</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#git-configuration"><span class="nav-number">1.3.1.</span> <span class="nav-text">Git Configuration</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ssh-password-free-login"><span class="nav-number">1.3.2.</span> <span class="nav-text">SSH Password-free login</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#test-ssh"><span class="nav-number">1.3.3.</span> <span class="nav-text">Test SSH</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#install-hexo"><span class="nav-number">1.4.</span> <span class="nav-text">Install Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#plug-in"><span class="nav-number">1.4.1.</span> <span class="nav-text">Plug-in</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#install-and-use-the-theme-next"><span class="nav-number">1.5.</span> <span class="nav-text">Install and use the theme Next</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#latex-support"><span class="nav-number">1.5.1.</span> <span class="nav-text">\(\LaTeX\) Support:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#write-blog-with-hexo"><span class="nav-number">1.6.</span> <span class="nav-text">Write blog with Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#new-blog"><span class="nav-number">1.6.1.</span> <span class="nav-text">New blog</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#writing-and-publish"><span class="nav-number">1.6.2.</span> <span class="nav-text">Writing and publish</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Lingium</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/lingium" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;lingium" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:5464944@gmail.com" title="E-Mail → mailto:5464944@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="Back to top">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://lingium.github.io/2021/02/19/TutOfPersonalBlog-en/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Lingium">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LINGIUM">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Build a personal blog with Github Pages and Hexo | LINGIUM">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Build a personal blog with Github Pages and Hexo
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-02-19 12:30:26" itemprop="dateCreated datePublished" datetime="2021-02-19T12:30:26+08:00">2021-02-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2021-02-20 12:30:26" itemprop="dateModified" datetime="2021-02-20T12:30:26+08:00">2021-02-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tutorials/" itemprop="url" rel="index"><span itemprop="name">Tutorials</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tutorials/Mac/" itemprop="url" rel="index"><span itemprop="name">Mac</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="build-a-personal-blog-with-github-pages-and-hexo">Build a personal blog with Github Pages and Hexo</h1>
+<p>The first blog will briefly record the construction process. In fact, there are many online tutorials. I just take a little time to record the process. There are not many pits in the construction. System is MacOS.</p>
+<h2 id="why-choose-github-pages-and-hexo">Why choose Github Pages and Hexo?</h2>
+<p>I suddenly wanted to build a blog and play around with front-end development. I use Github Pages mainly because it is free and I don't have to spend money to rent a server.</p>
+<p>In Jekyll and Hexo, the two static webpage generators, Jekyll relies on Ruby, the speed of static site generation will be slower and slower as the site content increases, while Hexo relies on node, the main focus of speed, there are a lot of available free open source themes and a very active Chinese community.</p>
+<span id="more"></span>
+<h2 id="init-github-pages">Init Github Pages</h2>
+<ol type="1">
+<li>Register a Github account, note down <strong>Username</strong> and <strong>email address</strong></li>
+<li>Follow the <a target="_blank" rel="noopener" href="https://pages.github.com/">official tutorial</a> create a new Repositories, note that the repository must be named as&lt;<strong>Username.github.io</strong>&gt;.</li>
+</ol>
+<h2 id="init-git">Init Git</h2>
+<p>Xcode on mac contains git. View version <code>git --version</code>. MacOS also comes with SSH</p>
+<h3 id="git-configuration">Git Configuration</h3>
+<p>Open terminal, setup user.name and user.email</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;your GitHub username&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;your GitHub email&quot;</span></span><br><span class="line"><span class="comment">#View configuration</span></span><br><span class="line">git config -l  </span><br></pre></td></tr></table></figure>
+<h3 id="ssh-password-free-login">SSH Password-free login</h3>
+<p>Generate SSH public and private keys:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/.ssh</span><br><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;your GitHub email&quot;</span> -f filename</span><br></pre></td></tr></table></figure>
+<p>where -C means comment string, like email address; -f specify key file storage file name</p>
+<p>Distribute the generated public key to the server open <code>~/id_rsa.pub</code> and copy to you Github web setting -&gt; SSH</p>
+<h3 id="test-ssh">Test SSH</h3>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<p>You would see:</p>
+<figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">The authenticity <span class="keyword">of</span> host <span class="comment">&#x27;github.com (xx.xx.xx.xx)&#x27; can&#x27;t be established.</span></span><br><span class="line">RSA <span class="keyword">key</span> fingerprint <span class="built_in">is</span> xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.</span><br><span class="line">Are you sure you want <span class="keyword">to</span> <span class="keyword">continue</span> connecting (yes/no)?</span><br></pre></td></tr></table></figure>
+<p>Choose yes</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hi ***! You<span class="symbol">&#x27;ve</span> successfully authenticated, but GitHub does <span class="keyword">not</span> provide shell <span class="keyword">access</span>.</span><br></pre></td></tr></table></figure>
+<h2 id="install-hexo">Install Hexo</h2>
+<p>Hexo need node environment, if you haven't install brew on your computer <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/bin/sh -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure></p>
+<p>Then install Node through brew, see <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Node Document</a> <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install node</span><br></pre></td></tr></table></figure></p>
+<p>Use the node package management tool npm to install hexo, with its own source very very slow, there are two ways to use domestic source installation.</p>
+<p>Temporary use of domestic sources: <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g  --registry https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure></p>
+<p>Set the global source configuration (equivalent to creating a .npmrc file) to use domestic sources:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> registry https://registry.npm.taobao.org</span><br><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<p>After installation, check the currently installed modules (packages), note that Hexo is globally installed, add parameters <code>-g</code></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="built_in">ls</span> -g</span><br></pre></td></tr></table></figure>
+<h3 id="plug-in">Plug-in</h3>
+<p>It's best to make a series of plugin changes before starting work, perfecting support for latex, git and image insertion</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> hexofolder</span><br><span class="line">npm uninstall --save hexo-renderer-marked <span class="comment">#Uninstall the original md rendering engine</span></span><br><span class="line">npm install --save hexo-renderer-kramed <span class="comment">#Using the new engine</span></span><br><span class="line">npm install --save hexo-math <span class="comment">#LaTeX support</span></span><br><span class="line">npm install --save hexo-deployer-git <span class="comment">#git support</span></span><br><span class="line">npm uninstall --save hexo-asset-image <span class="comment">#Image insertion support</span></span><br></pre></td></tr></table></figure>
+<h2 id="install-and-use-the-theme-next">Install and use the theme <em>Next</em></h2>
+<blockquote>
+<p>Note that the original Next github page is no longer maintained!</p>
+</blockquote>
+<blockquote>
+<p>Must be <a target="_blank" rel="noopener" href="https://github.com/next-theme/hexo-theme-next">hexo-theme-next</a></p>
+</blockquote>
+<p>Install Next</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> hexofolder</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+<p>Upgrade can be executed</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> hexofolder</span><br><span class="line"><span class="built_in">cd</span> themes/next</span><br><span class="line">git pull origin master</span><br></pre></td></tr></table></figure>
+<h3 id="latex-support"><span class="math inline">\(\LaTeX\)</span> Support:</h3>
+<p>We have installed <code>hexo-renderer-kramed</code> and <code>hexo-math</code>. Then modify _config.yml</p>
+<p><code>per_page: false</code> : Turn off the rendering formula of each page, the access speed of the page without the formula will not be affected, but each file needs to be manually add <code>mathjax: true</code> in the markdown file header</p>
+<p>Inline formula: <span class="math inline">\(\Im, \imath, \jmath, \Bbbk, \ell, \mho, \wp, \Re, \circledS\)</span></p>
+<p>Interline formula: <span class="math display">\[ dy/dx, \mathrm{d}y/\mathrm{d}x, \frac{dy}{dx}, \frac{\mathrm{d}y}{\mathrm{d}x}, \frac{\partial^2}{\partial x_1\partial x_2}y \]</span></p>
+<p>Multi-line formula: <span class="math display">\[ \begin{align}
+a &amp;= b + c \label{eq3} \\
+x &amp;= yz \label{eq4}\\
+l &amp;= m - n \label{eq5}
+\end{align} \]</span></p>
+<h2 id="write-blog-with-hexo">Write blog with Hexo</h2>
+<p>Init blog folder</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init hexofolder</span><br><span class="line"><span class="built_in">cd</span> hexofolder</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<p>Hexo will form the following working directory in the specified folder</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── <span class="built_in">source</span></span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure>
+<p>where &gt; node_modules: Dependency packages &gt; public：Store the generated pages &gt; scaffolds：Some templates &gt; source：store your articles &gt; themes：Next theme &gt; _config.yml: Blog Profile</p>
+<p>You can configure most of the parameters <a target="_blank" rel="noopener" href="https://hexo.io/docs/configuration">here</a>.</p>
+
+<h3 id="new-blog">New blog</h3>
+<p>Create New blog <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> hexofolder &amp;&amp; hexo new post &lt;new document title&gt;</span><br></pre></td></tr></table></figure> This will create md file and resource folder with the same name as "new document title" use template hexofolder/scaffolds/post if you set (<code>_config.yml:   post_asset_folder: true</code>).</p>
+<h3 id="writing-and-publish">Writing and publish</h3>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">hexo g <span class="comment">#generate </span></span><br><span class="line">hexo s <span class="comment">#server </span></span><br><span class="line">hexo d <span class="comment">#deploy </span></span><br><span class="line">hexo clean <span class="comment">#clean </span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Tutorials/" rel="tag"># Tutorials</a>
+              <a href="/tags/Mac/" rel="tag"># Mac</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/02/20/RenewRepository/" rel="next" title="Reset a Git Remote Repository">
+                  Reset a Git Remote Repository <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Lingium</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script size="200" alpha="0.3" zIndex="-1" src="https://cdn.jsdelivr.net/npm/ribbon.js@1.0.2/dist/ribbon.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+
+<script>
+var options = {
+  bottom: '64px',
+  right: '32px',
+  left: 'unset',
+  time: '0.5s',
+  mixColor: 'transparent',
+  backgroundColor: 'transparent',
+  buttonColorDark: '#100f2c',
+  buttonColorLight: '#fff',
+  saveInCookies: true,
+  label: '🌓',
+  autoMatchOsTheme: true
+}
+const darkmode = new Darkmode(options);
+window.darkmode = darkmode;
+darkmode.showWidget();
+</script>
+
+</body>
+</html>
