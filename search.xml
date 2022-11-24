@@ -40,7 +40,7 @@
   <entry>
     <title>Build a personal blog with Github Pages and Hexo</title>
     <url>/2021/02/19/TutOfPersonalBlog-en/</url>
-    <content><![CDATA[<h1 id="build-a-personal-blog-with-github-pages-and-hexo">Build a personal blog with Github Pages and Hexo</h1>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="build-a-personal-blog-with-github-pages-and-hexo">Build a personal blog with Github Pages and Hexo</h1>
 <p>The first blog will briefly record the construction process. In fact, there are many online tutorials. I just take a little time to record the process. There are not many pits in the construction. System is MacOS.</p>
 <h2 id="why-choose-github-pages-and-hexo">Why choose Github Pages and Hexo?</h2>
 <p>I suddenly wanted to build a blog and play around with front-end development. I use Github Pages mainly because it is free and I don't have to spend money to rent a server.</p>
@@ -68,10 +68,13 @@
 <p>Choose yes</p>
 <figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">Hi ***! You<span class="symbol">&#x27;ve</span> successfully authenticated, but GitHub does <span class="keyword">not</span> provide shell <span class="keyword">access</span>.</span><br></pre></td></tr></table></figure>
 <h2 id="install-hexo">Install Hexo</h2>
-<p>Hexo need node environment, if you haven't install brew on your computer <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">/bin/sh -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure></p>
-<p>Then install Node through brew, see <a href="https://hexo.io/zh-cn/docs/">Node Document</a> <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">brew install node</span><br></pre></td></tr></table></figure></p>
+<p>Hexo need node environment, if you haven't install brew on your computer</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">/bin/sh -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+<p>Then install Node through brew, see <a href="https://hexo.io/zh-cn/docs/">Node Document</a></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">brew install node</span><br></pre></td></tr></table></figure>
 <p>Use the node package management tool npm to install hexo, with its own source very very slow, there are two ways to use domestic source installation.</p>
-<p>Temporary use of domestic sources: <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g  --registry https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure></p>
+<p>Temporary use of domestic sources:</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g  --registry https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
 <p>Set the global source configuration (equivalent to creating a .npmrc file) to use domestic sources:</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> registry https://registry.npm.taobao.org</span><br><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
 <p>After installation, check the currently installed modules (packages), note that Hexo is globally installed, add parameters <code>-g</code></p>
@@ -94,28 +97,38 @@
 <p>We have installed <code>hexo-renderer-kramed</code> and <code>hexo-math</code>. Then modify _config.yml</p>
 <p><code>per_page: false</code> : Turn off the rendering formula of each page, the access speed of the page without the formula will not be affected, but each file needs to be manually add <code>mathjax: true</code> in the markdown file header</p>
 <p>Inline formula: <span class="math inline">\(\Im, \imath, \jmath, \Bbbk, \ell, \mho, \wp, \Re, \circledS\)</span></p>
-<p>Interline formula: <span class="math display">\[ dy/dx, \mathrm{d}y/\mathrm{d}x, \frac{dy}{dx}, \frac{\mathrm{d}y}{\mathrm{d}x}, \frac{\partial^2}{\partial x_1\partial x_2}y \]</span></p>
-<p>Multi-line formula: <span class="math display">\[ \begin{align}
+<p>Interline formula:</p>
+<p><span class="math display">\[
+dy/dx, \mathrm{d}y/\mathrm{d}x, \frac{dy}{dx}, \frac{\mathrm{d}y}{\mathrm{d}x}, \frac{\partial^2}{\partial x_1\partial x_2}y
+\]</span></p>
+<p>Multi-line formula:</p>
+<p><span class="math display">\[
+\begin{align}
 a &amp;= b + c \label{eq3} \\
 x &amp;= yz \label{eq4}\\
 l &amp;= m - n \label{eq5}
-\end{align} \]</span></p>
+\end{align}
+\]</span></p>
 <h2 id="write-blog-with-hexo">Write blog with Hexo</h2>
 <p>Init blog folder</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo init hexofolder</span><br><span class="line"><span class="built_in">cd</span> hexofolder</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
 <p>Hexo will form the following working directory in the specified folder</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── <span class="built_in">source</span></span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure>
-<p>where &gt; node_modules: Dependency packages &gt; public：Store the generated pages &gt; scaffolds：Some templates &gt; source：store your articles &gt; themes：Next theme &gt; _config.yml: Blog Profile</p>
+<p>where</p>
+<blockquote>
+<p>node_modules: Dependency packages public：Store the generated pages scaffolds：Some templates source：store your articles themes：Next theme _config.yml: Blog Profile</p>
+</blockquote>
 <p>You can configure most of the parameters <a href="https://hexo.io/docs/configuration">here</a>.</p>
 
 <h3 id="new-blog">New blog</h3>
-<p>Create New blog <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> hexofolder &amp;&amp; hexo new post &lt;new document title&gt;</span><br></pre></td></tr></table></figure> This will create md file and resource folder with the same name as "new document title" use template hexofolder/scaffolds/post if you set (<code>_config.yml:   post_asset_folder: true</code>).</p>
+<p>Create New blog</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> hexofolder &amp;&amp; hexo new post &lt;new document title&gt;</span><br></pre></td></tr></table></figure>
+<p>This will create md file and resource folder with the same name as "new document title" use template hexofolder/scaffolds/post if you set (<code>_config.yml:   post_asset_folder: true</code>).</p>
 <h3 id="writing-and-publish">Writing and publish</h3>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo g <span class="comment">#generate </span></span><br><span class="line">hexo s <span class="comment">#server </span></span><br><span class="line">hexo d <span class="comment">#deploy </span></span><br><span class="line">hexo clean <span class="comment">#clean </span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>Tutorials</category>
-        <category>Mac</category>
       </categories>
       <tags>
         <tag>Tutorials</tag>
@@ -125,22 +138,26 @@ l &amp;= m - n \label{eq5}
   <entry>
     <title>Variational Inference</title>
     <url>/2022/03/03/VariationalInference/</url>
-    <content><![CDATA[<p>Variational inference is used in the graduation thesis. Record it here.</p>
-<p>The goal of variational inference is to approximate the conditional probability of a latent variable <span class="math inline">\(x\)</span> under the observed variable <span class="math inline">\(y\)</span> (in the context of dimensionality reduction, our data). We choose a tractable distribution <span class="math inline">\(q(x; v)\)</span>, where <span class="math inline">\(v\)</span> represents model hyperparameters, as an approximation to simulate the intractable true distribution <span class="math inline">\(p(x \mid y)\)</span>.</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>The goal of variational inference is to approximate the conditional probability of a latent variable <span class="math inline">\(x\)</span> under the observed variable <span class="math inline">\(y\)</span> (in the context of dimensionality reduction, our data). We choose a tractable distribution <span class="math inline">\(q(x; v)\)</span>, where <span class="math inline">\(v\)</span> represents model hyperparameters, as an approximation to simulate the intractable true distribution <span class="math inline">\(p(x \mid y)\)</span>.</p>
 <p>We can rewrite <span class="math inline">\(\log p(y)\)</span> to decompose it into two terms. can be written as the sum of the following two terms:</p>
 <p><span class="math display">\[
 \begin{equation}
   \log p(y)=\underbrace{\int q(x) \log p(y, x) dx -\int q(x) \log q(x) d x}_{L(q(x)), E L O B(\text { Evidence Lower Bound })}+\underbrace{\int q(x) \log \frac{q(x)}{p(x \mid y)} d x}_{K L(q(x) \| p(x \mid y))}. \label{eq1} 
   \end{equation}
-\]</span> <span id="more"></span></p>
+\]</span></p>
+<span id="more"></span>
 <p>The latter term is known as the <em>Kullback-Leibler (KL) divergence</em>, which is a method of quantifying the difference between two distributions, and is either larger than or equal to zero at all times. It equals 0 if and only if the two distributions are identical .</p>
 <p>Since <span class="math inline">\(\log p(y)\)</span> is a fixed quantity for a given set of observations, maximizing the  is equivalent to minimizing the KL divergence, i.e., minimizing the distance between the two distributions.</p>
-<p>This conclusion can also be obtained by use Jensen’s inequality to show that <span class="math display">\[\begin{align}
+<p>This conclusion can also be obtained by use Jensen’s inequality to show that</p>
+<p><span class="math display">\[
+\begin{align}
     \log p(y) \geq ELOB.  \label{eq2}
-\end{align}\]</span> Based on this fact, instead of trying to maximize the likelihood directly, we can try to maximize the lower bound of the likelihood and still can optimize the parameters as well as make predictions.</p>
+\end{align}
+\]</span></p>
+<p>Based on this fact, instead of trying to maximize the likelihood directly, we can try to maximize the lower bound of the likelihood and still can optimize the parameters as well as make predictions.</p>
 <p>Proof of Equation <span class="math inline">\(\eqref{eq1}\)</span>, approach showing the relationship between marginal likelihood, ELOB, and KL divergence:</p>
 <p><span class="math display">\[
-    \begin{equation}
+\begin{equation}
       \begin{aligned}
       \log p(y) &amp;=\log p(y, x)-\log p(x \mid y) \\
       &amp;=\log \frac{p(y, x)}{q(x)}-\log \frac{p(x \mid y)}{q(x)} \\
@@ -164,8 +181,9 @@ l &amp;= m - n \label{eq5}
     \log p(y)=\underbrace{\int q(x) \log p(y, x) dx -\int q(x) \log q(x) d x}_{L(q(x)), E L O B(\text { Evidence Lower Bound })}+\underbrace{\int q(x) \log \frac{q(x)}{p(x \mid y)} d x}_{K L(q(x) \| p(x \mid y))}.
 \end{align}
 \]</span></p>
-<p>Another approach using Jensen’s inequality (Equation <span class="math inline">\(\eqref{eq2}\)</span>): <span class="math display">\[
-    \begin{equation}
+<p>Another approach using Jensen’s inequality (Equation <span class="math inline">\(\eqref{eq2}\)</span>):</p>
+<p><span class="math display">\[
+\begin{equation}
       \begin{aligned}
       \log P(y) &amp;=\log \left(\int P(y, x) d x\right) \\
       &amp;=\log \left(\int\left(\frac{P(y, x)}{q(x)} q(x)\right) d x\right) \\
@@ -181,8 +199,7 @@ l &amp;= m - n \label{eq5}
         <category>Statistics</category>
       </categories>
       <tags>
-        <tag>Statistics</tag>
-        <tag>Machine Learning</tag>
+        <tag>PCA to BGP-LVM</tag>
       </tags>
   </entry>
 </search>

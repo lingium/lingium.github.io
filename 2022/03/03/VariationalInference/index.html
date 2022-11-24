@@ -13,25 +13,24 @@
 
 <link rel="stylesheet" href="/css/main.css">
 
-
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic%7CDancing+Script:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"lingium.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"lingium.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Variational inference is used in the graduation thesis. Record it here. The goal of variational inference is to approximate the conditional probability of a latent variable \(x\) under the observed va">
+    <meta name="description" content="The goal of variational inference is to approximate the conditional probability of a latent variable \(x\) under the observed variable \(y\) (in the context of dimensionality reduction, our data). We">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Variational Inference">
 <meta property="og:url" content="https://lingium.github.io/2022/03/03/VariationalInference/index.html">
 <meta property="og:site_name" content="L&#39;s Blog">
-<meta property="og:description" content="Variational inference is used in the graduation thesis. Record it here. The goal of variational inference is to approximate the conditional probability of a latent variable \(x\) under the observed va">
+<meta property="og:description" content="The goal of variational inference is to approximate the conditional probability of a latent variable \(x\) under the observed variable \(y\) (in the context of dimensionality reduction, our data). We">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-03-03T03:51:47.000Z">
 <meta property="article:modified_time" content="2022-03-03T03:51:47.000Z">
 <meta property="article:author" content="Lingium">
-<meta property="article:tag" content="Statistics">
-<meta property="article:tag" content="Machine Learning">
+<meta property="article:tag" content="PCA to BGP-LVM">
 <meta name="twitter:card" content="summary">
 
 
@@ -92,7 +91,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -169,12 +168,12 @@
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -204,6 +203,7 @@
     </header>
 
     
+  <div class="reading-progress-bar"></div>
 
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
@@ -272,22 +272,26 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>Variational inference is used in the graduation thesis. Record it here.</p>
-<p>The goal of variational inference is to approximate the conditional probability of a latent variable <span class="math inline">\(x\)</span> under the observed variable <span class="math inline">\(y\)</span> (in the context of dimensionality reduction, our data). We choose a tractable distribution <span class="math inline">\(q(x; v)\)</span>, where <span class="math inline">\(v\)</span> represents model hyperparameters, as an approximation to simulate the intractable true distribution <span class="math inline">\(p(x \mid y)\)</span>.</p>
+        <p>The goal of variational inference is to approximate the conditional probability of a latent variable <span class="math inline">\(x\)</span> under the observed variable <span class="math inline">\(y\)</span> (in the context of dimensionality reduction, our data). We choose a tractable distribution <span class="math inline">\(q(x; v)\)</span>, where <span class="math inline">\(v\)</span> represents model hyperparameters, as an approximation to simulate the intractable true distribution <span class="math inline">\(p(x \mid y)\)</span>.</p>
 <p>We can rewrite <span class="math inline">\(\log p(y)\)</span> to decompose it into two terms. can be written as the sum of the following two terms:</p>
 <p><span class="math display">\[
 \begin{equation}
   \log p(y)=\underbrace{\int q(x) \log p(y, x) dx -\int q(x) \log q(x) d x}_{L(q(x)), E L O B(\text { Evidence Lower Bound })}+\underbrace{\int q(x) \log \frac{q(x)}{p(x \mid y)} d x}_{K L(q(x) \| p(x \mid y))}. \label{eq1} 
   \end{equation}
-\]</span> <span id="more"></span></p>
+\]</span></p>
+<span id="more"></span>
 <p>The latter term is known as the <em>Kullback-Leibler (KL) divergence</em>, which is a method of quantifying the difference between two distributions, and is either larger than or equal to zero at all times. It equals 0 if and only if the two distributions are identical .</p>
 <p>Since <span class="math inline">\(\log p(y)\)</span> is a fixed quantity for a given set of observations, maximizing the  is equivalent to minimizing the KL divergence, i.e., minimizing the distance between the two distributions.</p>
-<p>This conclusion can also be obtained by use Jensen’s inequality to show that <span class="math display">\[\begin{align}
+<p>This conclusion can also be obtained by use Jensen’s inequality to show that</p>
+<p><span class="math display">\[
+\begin{align}
     \log p(y) \geq ELOB.  \label{eq2}
-\end{align}\]</span> Based on this fact, instead of trying to maximize the likelihood directly, we can try to maximize the lower bound of the likelihood and still can optimize the parameters as well as make predictions.</p>
+\end{align}
+\]</span></p>
+<p>Based on this fact, instead of trying to maximize the likelihood directly, we can try to maximize the lower bound of the likelihood and still can optimize the parameters as well as make predictions.</p>
 <p>Proof of Equation <span class="math inline">\(\eqref{eq1}\)</span>, approach showing the relationship between marginal likelihood, ELOB, and KL divergence:</p>
 <p><span class="math display">\[
-    \begin{equation}
+\begin{equation}
       \begin{aligned}
       \log p(y) &amp;=\log p(y, x)-\log p(x \mid y) \\
       &amp;=\log \frac{p(y, x)}{q(x)}-\log \frac{p(x \mid y)}{q(x)} \\
@@ -311,8 +315,9 @@
     \log p(y)=\underbrace{\int q(x) \log p(y, x) dx -\int q(x) \log q(x) d x}_{L(q(x)), E L O B(\text { Evidence Lower Bound })}+\underbrace{\int q(x) \log \frac{q(x)}{p(x \mid y)} d x}_{K L(q(x) \| p(x \mid y))}.
 \end{align}
 \]</span></p>
-<p>Another approach using Jensen’s inequality (Equation <span class="math inline">\(\eqref{eq2}\)</span>): <span class="math display">\[
-    \begin{equation}
+<p>Another approach using Jensen’s inequality (Equation <span class="math inline">\(\eqref{eq2}\)</span>):</p>
+<p><span class="math display">\[
+\begin{equation}
       \begin{aligned}
       \log P(y) &amp;=\log \left(\int P(y, x) d x\right) \\
       &amp;=\log \left(\int\left(\frac{P(y, x)}{q(x)} q(x)\right) d x\right) \\
@@ -332,8 +337,7 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Statistics/" rel="tag"># Statistics</a>
-              <a href="/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
+              <a href="/tags/PCA-to-BGP-LVM/" rel="tag"># PCA to BGP-LVM</a>
           </div>
 
         
@@ -379,6 +383,7 @@
 
   
   <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
 
   
