@@ -1,5 +1,5 @@
 :root {
-  --body-bg-color: url("/source/images/beige-tiles.png");
+  --body-bg-color: url("http://www.toptal.com/designers/subtlepatterns/uploads/beige-tiles.png");
   --content-bg-color: #fff;
   --card-bg-color: #f5f5f5;
   --text-color: #555;
@@ -2797,10 +2797,10 @@ mjx-container[display='true'] + br {
 }
 .post-body h1,
 .post-body h2 {
-  border-bottom: 1px solid url("/source/images/beige-tiles.png");
+  border-bottom: 1px solid url("http://www.toptal.com/designers/subtlepatterns/uploads/beige-tiles.png");
 }
 .post-body h3 {
-  border-bottom: 1px dotted url("/source/images/beige-tiles.png");
+  border-bottom: 1px dotted url("http://www.toptal.com/designers/subtlepatterns/uploads/beige-tiles.png");
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .main-inner {
