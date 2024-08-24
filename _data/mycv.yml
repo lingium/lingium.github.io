@@ -1,0 +1,113 @@
+- title: General Information
+  type: map
+  contents:
+    - name: Full Name
+      value: Zhi Ling
+    - name: Date of Birth
+      value: 5th May 2000
+    - name: Languages
+      value: Chinese, English
+
+- title: Education
+  type: time_table
+  contents:
+    - title: Master of Science in Statistics
+      institution: Imperial College London
+      year: 2022-2023
+      description:
+        - "GPA: 78.84/100"
+        # - "Thesis marks: 85.30/100"
+        - title: Courses
+          contents:
+            - Computational Statistics, Fundamentals of Statistical Inference, Time Series Analysis,
+            - Deep Learning, Machine Learning, Big Data Processing, Data Science
+    - title: Bachelor of science in Statistics
+      institution: University of Glasgow
+      year: 2020-2022
+      description:
+        - "GPA: 20.08/22"
+        # - "Thesis marks: 21.00/22"
+        - title: Courses
+          contents:
+            - Mathematical finance, Biostatistics, Advanced Bayesian Methods, Statistical Genetics, Spatial Statistics, Multivariate Data Analysis
+    - title: Bachelor of Economics in Economic Statistics
+      institution: Zhongnan University of Economics and Law
+      year: 2018-2022
+      description:
+        - "GPA: 3.83/4.0"
+        - "Percentage scores: 91.47/100"
+        - Double degree programme established with University of Glasgow
+        - title: Courses
+          contents:
+            - Macroeconomics, Microeconomics, Econometrics, Linear Algebra, Probability Theory, Mathematical Statistics
+
+- title: Experience
+  type: time_table
+  contents:
+    - title: Research assistant
+      institution: Saw Swee Hock School of Public Health, National University of Singapore
+      year: 2023 - now
+      description:
+        - Conduct research in infectious disease modelling, and machine learning applied to public health.
+        # - Develop and implement computational models, statistical methods, and machine learning algorithms to analyze infectious disease data.
+        # - Collaborate with multidisciplinary teams of researchers. #including epidemiologists, biologists, machine learners, biostatisticians, and public health experts.
+    - title: Algorithm Engineer Intern
+      institution: Causis Investment Co., Ltd.
+      year: 2021
+      description:
+        - Hosting the development of backtesting systems (Python, SQL, MongoDB).
+    - title: Analyst Intern
+      institution: China Galaxy Securities Co., Ltd.
+      year: 2020
+      description:
+        - Responsible for the stock market sentiment analysis project.
+
+
+- title: Skills
+  type: map
+  contents:
+    - name: Programming
+      value: Python, R, SQL, MATLAB, C/C++, Shell
+    - name: Technologies
+      value: Git, Stan, Docker, PyTorch, TensorFlow, NumPy, Pandas, LaTeX
+
+
+# - title: Open Source Projects
+#   type: time_table
+#   contents:
+#     - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
+#       year: 2015-now
+#       description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
+
+# - title: Honors and Awards
+#   type: time_table
+#   contents:
+#     - year: 1921
+#       items: 
+#         - Nobel Prize in Physics 
+#         - Matteucci Medal
+#     - year: 2029
+#       items: 
+#         - Max Planck Medal
+
+- title: Academic Interests
+  type: nested_list
+  contents:
+    - title: Bayesian Inference
+      items: 
+        # - Hierarchical Bayesian Modelling
+        - Approximate Bayesian Inference
+        - General Bayesian methodology for biostatistics
+    - title: Global health
+      items:
+        - Infectious Disease Modelling
+        - Electronic health record (EHR)
+    - title: Deep Learning
+      items:
+        - Generative Deep Learning
+        - Bayesian Deep Learning and MCMC
+
+# - title: Other Interests
+#   type: list
+#   contents:
+#     - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.

@@ -2,24 +2,25 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
+subtitle: >
+  Research assistant, SSHSPH, NUS
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: prof_pic1.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
 
-news: true # includes a list of news items
-selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true # includes social icons at the bottom of the page
+
+news: false  # includes a list of news items
+selected_papers: false # includes a list of papers marked as "selected={true}"
+social: false  # includes social icons at the bottom of the page
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+This is Zhi Ling ("Zhi" sounds the same as Gee). I am a research assistant from Saw Swee Hock School of Public Health, National University of Singapore. My advisor is [Dr. Swapnil Mishra](https://s-mishra.github.io/). I'm broadly interested in machine learning and public health. I am also interested in developing general Bayesian methods for biostatistical applications.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+<!-- Before joining NUS, I acquired my M.Sc. with distinction at Imperial College London. In my graduation thesis, I have worked with [Dr. Oliver Ratmann](https://www.imperial.ac.uk/people/oliver.ratmann05) within the [Machine Learning & Global Health Network](https://mlgh.net/). We focused on developing Bayesian models to infer social contact dynamics during the COVID-19 pandemic.  -->
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+In my spare time, I am deeply engaged in to the digital compilation and analysis of ancient Chinese books. This includes a particular focus on traditional Chinese medicine and ancient Chinese literature. I am currently leading a major project on the phonetic notation of Chinese philosophical classics (LaTeX, expl3), possibly the largest of its kind to date. This project is in collaboration with my friends from Beijing University of Chinese Medicine and aims to promote cultural education and dissemination. See [here]({{ site.url }}/assets/pdf/两都赋.pdf) for an example.
+
+<!-- I am a professional flute player. I proudly served in [Zhongnan University of Economics and Law Concert Band](https://baike.baidu.com/item/%E4%B8%AD%E5%8D%97%E8%B4%A2%E7%BB%8F%E6%94%BF%E6%B3%95%E5%A4%A7%E5%AD%A6%E5%A4%A7%E5%AD%A6%E7%94%9F%E7%AE%A1%E4%B9%90%E5%9B%A2/2830414) (ZNCB) during my undergraduate studies and [Imperial College Wind Band](https://www.imperialcollegeunion.org/activities/a-to-z/wind-band) during my master's studies. In my free time, I enjoy light and classical music, cooking, and playing basketball. -->
